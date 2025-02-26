@@ -6,11 +6,11 @@ namespace Mission08_Team0114.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private TasksDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(TasksDbContext temp)
     {
-        _logger = logger;
+        _context = temp;
     }
 
     public IActionResult Index()
