@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kmans\\source\\repos\\Mission08_Team0114\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0AFC0B-C58C-4D81-878D-8B70CFB5C6C9}|Mission08_Team0114\\Mission08_Team0114.csproj|c:\\users\\kmans\\source\\repos\\mission08_team0114\\mission08_team0114\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{7B0AFC0B-C58C-4D81-878D-8B70CFB5C6C9}|Mission08_Team0114\\Mission08_Team0114.csproj|solutionrelative:mission08_team0114\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0AFC0B-C58C-4D81-878D-8B70CFB5C6C9}|Mission08_Team0114\\Mission08_Team0114.csproj|c:\\users\\kmans\\source\\repos\\mission08_team0114\\mission08_team0114\\views\\home\\addtask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B0AFC0B-C58C-4D81-878D-8B70CFB5C6C9}|Mission08_Team0114\\Mission08_Team0114.csproj|solutionrelative:mission08_team0114\\views\\home\\addtask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\kmans\\source\\repos\\Mission08_Team0114\\Mission08_Team0114\\.gitignore",
+              "RelativeDocumentMoniker": "Mission08_Team0114\\.gitignore",
+              "ToolTip": "C:\\Users\\kmans\\source\\repos\\Mission08_Team0114\\Mission08_Team0114\\.gitignore",
+              "RelativeToolTip": "Mission08_Team0114\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-02-27T17:52:15.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddTask.cshtml",
+              "DocumentMoniker": "C:\\Users\\kmans\\source\\repos\\Mission08_Team0114\\Mission08_Team0114\\Views\\Home\\AddTask.cshtml",
+              "RelativeDocumentMoniker": "Mission08_Team0114\\Views\\Home\\AddTask.cshtml",
+              "ToolTip": "C:\\Users\\kmans\\source\\repos\\Mission08_Team0114\\Mission08_Team0114\\Views\\Home\\AddTask.cshtml",
+              "RelativeToolTip": "Mission08_Team0114\\Views\\Home\\AddTask.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-26T17:29:50.337Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
