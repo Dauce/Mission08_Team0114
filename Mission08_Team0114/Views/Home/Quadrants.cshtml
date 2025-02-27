@@ -7,33 +7,41 @@
 <div class="text-center">
     <h1 class="display-4">Time Management Matrix</h1>
     <h5 class="display-6" style="font-size: 1.2rem;">Stephen Covey</h5>
-    
+
 </div>
 <br/><br/>
 <div class="container">
-<div class="row">
-    <div class="col">
-        <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 1: Important/Urgent</h3>
-        @foreach (var task in Model.Where(t => t.quadrant == 1))
-        {
-            <div class="row">
-                <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
-                <div class="col-4">@task.taskName</div>
-                <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                <div class="col-4">@task.categoryName</div>
-            </div>
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 1: Important/Urgent</h3>
+            @foreach (var task in Model.Where(t => t.quadrant == 1))
+            {
+                <div class="row">
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
+                    <div class="col-4">@task.taskName</div>
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
+                    <div class="col-4">@task.Categories.categoryName</div>
+                </div>
 
-            <div class="row">
-                <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
-                <div class="col-4">@task.dueDate</div>
-                <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                <div class="col-4">@task.completed </div>
+                <div class="row">
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
+                    <div class="col-4">@task.dueDate</div>
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
+                    @if (@task.completed == 0)
+                    {
+                        <div class="col-4">No</div>
+                    }
+                    else
+                    {
+                        <div class="col-4">Yes</div>
+                    }
+                    
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
-                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
+                    <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-taskId="@task.taskId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-taskId="@task.taskId">Delete</a>
                 </div>
             </div>
             <hr />
@@ -48,20 +56,27 @@
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
                 <div class="col-4">@task.taskName</div>
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                <div class="col-4">@task.categoryName</div>
+                    <div class="col-4">@task.Categories.categoryName</div>
             </div>
 
             <div class="row">
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
                 <div class="col-4">@task.dueDate </div>
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                <div class="col-4">@task.completed </div>
+                @if (@task.completed == 0)
+                {
+                    <div class="col-4">No</div>
+                }
+                else
+                {
+                    <div class="col-4">Yes</div>
+                }
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
-                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
+                    <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-taskId="@task.taskId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-taskId="@task.taskId">Delete</a>
                 </div>
             </div>
             <hr />
@@ -76,20 +91,27 @@
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
                     <div class="col-4">@task.taskName</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                    <div class="col-4">@task.categoryName</div>
+                        <div class="col-4">@task.Categories.categoryName</div>
                 </div>
 
                 <div class="row">
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
                     <div class="col-4">@task.dueDate</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                    <div class="col-4">@task.completed </div>
+                    @if (@task.completed == 0)
+                    {
+                        <div class="col-4">No</div>
+                    }
+                    else
+                    {
+                        <div class="col-4">Yes</div>
+                    }
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
-                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
+                        <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-taskId="@task.taskId">Edit</a>
+                        <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-taskId="@task.taskId">Delete</a>
                     </div>
                 </div>
                 <hr />
@@ -104,20 +126,27 @@
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
                     <div class="col-4">@task.taskName</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                    <div class="col-4">@task.categoryName</div>
+                        <div class="col-4">@task.Categories.categoryName</div>
                 </div>
 
                 <div class="row">
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
                     <div class="col-4">@task.dueDate</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                    <div class="col-4">@task.completed </div>
+                    @if (@task.completed == 0)
+                    {
+                        <div class="col-4">No</div>
+                    }
+                    else
+                    {
+                        <div class="col-4">Yes</div>
+                    }
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
-                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
+                        <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-taskId="@task.taskId">Edit</a>
+                        <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-taskId="@task.taskId">Delete</a>
                     </div>
                 </div>
                 <hr />
