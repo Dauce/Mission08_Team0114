@@ -17,7 +17,7 @@ public class HomeController : Controller
     public IActionResult Quadrants()
     {
         var tasks = _context.Tasks
-            .Include(x=>x.categoryName)
+            .Include(x=>x.Category)
             .ToList();
         
         return View(tasks);
