@@ -1,4 +1,5 @@
-﻿@model List<Task>
+﻿@model List<Mission08_Team0114.Models.Task>
+
 @{
     ViewData["Title"] = "Quadrants";
 }
@@ -13,26 +14,26 @@
 <div class="row">
     <div class="col">
         <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 1: Important/Urgent</h3>
-        @foreach (var task in Model.Where(t => t.Quadrant == 1))
+        @foreach (var task in Model.Where(t => t.quadrant == 1))
         {
             <div class="row">
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
-                <div class="col-4">@task.Task</div>
+                <div class="col-4">@task.taskName</div>
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                <div class="col-4">@task.Category</div>
+                <div class="col-4">@task.categoryName</div>
             </div>
 
             <div class="row">
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
-                <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                <div class="col-4">@task.dueDate</div>
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+                <div class="col-4">@task.completed </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
-                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
                 </div>
             </div>
             <hr />
@@ -41,26 +42,26 @@
 
     <div class="col">
         <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 2: Important/Not Urgent</h3>
-        @foreach (var task in Model.Where(t => t.Quadrant == 2))
+        @foreach (var task in Model.Where(t => t.quadrant == 2))
         {
             <div class="row">
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
-                <div class="col-4">@task.Task</div>
+                <div class="col-4">@task.taskName</div>
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                <div class="col-4">@task.Category</div>
+                <div class="col-4">@task.categoryName</div>
             </div>
 
             <div class="row">
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
-                <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                <div class="col-4">@task.dueDate </div>
                 <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+                <div class="col-4">@task.completed </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
-                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
                 </div>
             </div>
             <hr />
@@ -69,26 +70,26 @@
     <div class="row">
         <div class="col">
             <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 3: Not Important/Urgent</h3>
-            @foreach (var task in Model.Where(t => t.Quadrant == 3))
+            @foreach (var task in Model.Where(t => t.quadrant == 3))
             {
                 <div class="row">
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
-                    <div class="col-4">@task.Task</div>
+                    <div class="col-4">@task.taskName</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                    <div class="col-4">@task.Category</div>
+                    <div class="col-4">@task.categoryName</div>
                 </div>
 
                 <div class="row">
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
-                    <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                    <div class="col-4">@task.dueDate</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                    <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+                    <div class="col-4">@task.completed </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
-                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
+                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
                     </div>
                 </div>
                 <hr />
@@ -97,26 +98,26 @@
 
         <div class="col">
             <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 4: Not Important/Not Urgent</h3>
-            @foreach (var task in Model.Where(t => t.Quadrant == 4))
+            @foreach (var task in Model.Where(t => t.quadrant == 4))
             {
                 <div class="row">
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
-                    <div class="col-4">@task.Task</div>
+                    <div class="col-4">@task.taskName</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
-                    <div class="col-4">@task.Category</div>
+                    <div class="col-4">@task.categoryName</div>
                 </div>
 
                 <div class="row">
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
-                    <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                    <div class="col-4">@task.dueDate</div>
                     <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
-                    <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+                    <div class="col-4">@task.completed </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
-                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.taskId })'">Edit</button>
+                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.taskId })'">Delete</button>
                     </div>
                 </div>
                 <hr />

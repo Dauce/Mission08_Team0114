@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission08_Team0114.Models;
 
 namespace Mission08_Team0114.Controllers;
@@ -15,7 +16,11 @@ public class HomeController : Controller
 
     public IActionResult Quadrants()
     {
-        return View();
+        var tasks = _context.Tasks
+            .Include(x=>x.categoryName)
+            .ToList();
+        
+        return View(tasks);
     }
 
     public IActionResult Privacy()
