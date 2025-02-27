@@ -1,47 +1,60 @@
 @model Mission08_Team0114.Models.Task
 <h1>Create Task</h1>
-<form method="post">
-    @* Task (Required) *@
-    @* • Due Date *@
-    @* • Quadrant (Required) *@
-    @* • Category (Dropdown containing options: Home, School, Work, Church) *@
-    @* • Completed (True/False) *@
-    <!-- Movie ID (hidden) -->
-    <input type="hidden" asp-for="TaskId" />
-    <!-- Title Field -->
+<form method="post" asp-action="AddTask">
+    
+    <!-- Task ID (hidden) -->
+    <input type="hidden" asp-for="taskId" />
+
+    <!-- Date Field -->
     <div class="mb-3">
-        <label asp-for="TaskDate" class="form-label">Date:</label>
-        <input asp-for="TaskDate" class="form-control" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
-        <span asp-validation-for="TaskDate" class="text-danger"></span>
+        <label asp-for="taskName" class="form-label">Task Name:</label>
+        <input asp-for="taskName" class="form-control" />
+        <span asp-validation-for="dueDate" class="text-danger"></span>
     </div>
+    
+    <!-- Date Field -->
+    <div class="mb-3">
+        <label asp-for="dueDate" class="form-label">Date:</label>
+        <input asp-for="dueDate" class="form-control" />
+        <span asp-validation-for="dueDate" class="text-danger"></span>
+    </div>
+    
     <!-- Quadrant Field -->
     <div class="mb-3">
-        <label asp-for="Quadrant" class="form-label">Quadrant:</label>
-        <select asp-for="Quadrant" class="form-select">
+        <label asp-for="quadrant" class="form-label">Quadrant:</label>
+        <select asp-for="quadrant" class="form-select">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
-        <span asp-validation-for="Rating" class="text-danger"></span>
+        <span asp-validation-for="quadrant" class="text-danger"></span>
     </div>
+    
     <!-- Category Field -->
     <div class="mb-3">
-        <label asp-for="CategoryId" class="form-label">Category:</label>
-        <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName", Model.CategoryId))" class="form-select">
+        <label asp-for="categoryId" class="form-label">Category:</label>
+        <select asp-for="categoryId">
             <option value="">Select a Category</option>
+            @foreach (var row in ViewBag.Categories)
+            {
+                <option value="@row.categoryId">@row.categoryName</option>
+            }
         </select>
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
+
+        <span asp-validation-for="categoryId" class="text-danger"></span>
     </div>
+    
     <!-- Completed Field -->
     <div class="mb-3">
-        <label asp-for="Completed" class="form-label">Completed:</label>
-        <select asp-for="Completed" class="form-select">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
+        <label asp-for="completed" class="form-label">Completed:</label>
+        <select asp-for="completed" class="form-select">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
         </select>
-        <span asp-validation-for="Completed" class="text-danger"></span>
+        <span asp-validation-for="completed" class="text-danger"></span>
     </div>
+    
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary">Save Task</button>
 </form>

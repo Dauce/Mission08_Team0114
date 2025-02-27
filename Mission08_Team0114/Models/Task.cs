@@ -11,16 +11,16 @@ namespace Mission08_Team0114.Models
         [Required]
         public string taskName { get; set; }
 
-        public string dueDate { get; set; }
+        public string? dueDate { get; set; }
 
         [Required]
         public int quadrant { get; set; }
 
         [ForeignKey(name:"categoryId")]
-        public int categoryId { get; set; }
+        public int? categoryId { get; set; }
         public Category Categories { get; set; }
 
-        public int completed { get; set; }
+        public int? completed { get; set; }
 
     }
 }
