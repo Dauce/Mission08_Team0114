@@ -14,9 +14,13 @@ public class HomeController : Controller
         _context = temp;
     }
 
-    public IActionResult Index()
-    {        
-        return View();
+    public IActionResult Quadrants()
+    {
+        var tasks = _context.Tasks
+            .Include(x=>x.categoryName)
+            .ToList();
+        
+        return View(tasks);
     }
 
     public IActionResult Privacy()
