@@ -1,10 +1,128 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Task>
+@{
+    ViewData["Title"] = "Quadrants";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Time Management Matrix</h1>
+    <h5 class="display-6" style="font-size: 1.2rem;">Stephen Covey</h5>
+    
+</div>
+<br/><br/>
+<div class="container">
+<div class="row">
+    <div class="col">
+        <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 1: Important/Urgent</h3>
+        @foreach (var task in Model.Where(t => t.Quadrant == 1))
+        {
+            <div class="row">
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
+                <div class="col-4">@task.Task</div>
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
+                <div class="col-4">@task.Category</div>
+            </div>
+
+            <div class="row">
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
+                <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
+                <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                </div>
+            </div>
+            <hr />
+        }
+    </div>
+
+    <div class="col">
+        <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 2: Important/Not Urgent</h3>
+        @foreach (var task in Model.Where(t => t.Quadrant == 2))
+        {
+            <div class="row">
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
+                <div class="col-4">@task.Task</div>
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
+                <div class="col-4">@task.Category</div>
+            </div>
+
+            <div class="row">
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
+                <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
+                <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                </div>
+            </div>
+            <hr />
+        }
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 3: Not Important/Urgent</h3>
+            @foreach (var task in Model.Where(t => t.Quadrant == 3))
+            {
+                <div class="row">
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
+                    <div class="col-4">@task.Task</div>
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
+                    <div class="col-4">@task.Category</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
+                    <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
+                    <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
+                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                    </div>
+                </div>
+                <hr />
+            }
+        </div>
+
+        <div class="col">
+            <h3 class="display-6" style="font-size: 2rem; font-weight: bold;">Quadrant 4: Not Important/Not Urgent</h3>
+            @foreach (var task in Model.Where(t => t.Quadrant == 4))
+            {
+                <div class="row">
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Task:</div>
+                    <div class="col-4">@task.Task</div>
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Category:</div>
+                    <div class="col-4">@task.Category</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Due Date:</div>
+                    <div class="col-4">@task.DueDate.ToShortDateString()</div>
+                    <div class="col-2 fw-bold" style="font-size: 1rem;">Completed:</div>
+                    <div class="col-4">@(task.Completed ? "Yes" : "No")</div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="location.href='@Url.Action("Edit", "Home", new { id = task.TaskId })'">Edit</button>
+                        <button class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Home", new { id = task.TaskId })'">Delete</button>
+                    </div>
+                </div>
+                <hr />
+            }
+        </div>
+    </div>
 </div>
 
-@* hello *@
+</div>
