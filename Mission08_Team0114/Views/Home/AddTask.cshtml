@@ -1,6 +1,6 @@
 @model Mission08_Team0114.Models.Task
 <h1>Create Task</h1>
-<form method="post" asp-action="AddTask">
+<form method="post" asp-action="@(Model.taskId > 0 ? "EditTask" : "AddTask")">
     
     <!-- Task ID (hidden) -->
     <input type="hidden" asp-for="taskId" />
@@ -58,3 +58,5 @@
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary">Save Task</button>
 </form>
+
+<div asp-validation-summary="All"></div>
