@@ -25,6 +25,33 @@ public class HomeController : Controller
         return View(tasks);
     }
 
+    [HttpGet]
+    public IActionResult AddTask()
+    {
+        ViewBag.Categories = _context.Categories.ToList();
+
+        return View("AddTask", new Mission08_Team0114.Models.Task());
+    }
+
+    [HttpPost]
+    public IActionResult AddTask(Mission08_Team0114.Models.Task response)
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Tasks.Add(response); // Add record to the database
+            _context.SaveChanges();
+
+            return RedirectToAction("Quadrants", response);
+        }
+        else // Invalid data
+        {
+            ViewBag.Categories = _context.Categories
+            .ToList();
+
+            return View(response);
+        }
+    }
+
     public IActionResult Delete(int taskId)
     {
         var taskToDelete = _context.Tasks
